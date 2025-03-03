@@ -79,3 +79,16 @@ In this lab, we will be setting up a basic SOC (security operations center) in t
  ![Image](https://github.com/user-attachments/assets/7e4d851a-8a5d-4f04-a554-063b79850585)
  <li>we can now close/log out of the vm</li>
  <h2>Logging</h2>
+ <li>intentionally fail to log back into the vm several times which will create log files</li>
+
+ ![Image](https://github.com/user-attachments/assets/e9ab74f6-69c7-46c8-bc9d-24827ed1da02)
+ <li>now log in with your correct credentials</li>
+ <li>launch event viewer</li>
+
+ ![Image](https://github.com/user-attachments/assets/0e753184-4979-4233-abe7-067a7eb62b41)
+ <li>expand windows log> security</li>
+ <li>event ID 4625 is the failed logon attempt</li>
+ <li>right-click security> Find> and enter the 4625 event ID for a search</li>
+
+ ![Image](https://github.com/user-attachments/assets/720cf840-7a0c-4591-b731-fe8f0153f54f)
+ <li>once attackers see the vm on internet and attempt to hack into it, those failed attempts will show here</li>
