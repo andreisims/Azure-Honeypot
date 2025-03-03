@@ -181,3 +181,9 @@ In this lab, we will be setting up a basic SOC (security operations center) in t
 ├── WindowsEvents
     └── where EventID == "4625"
 ```
+ <li>same IP address using different usernames to gain access</li>
+
+ ![Image](https://github.com/user-attachments/assets/26542346-7d9e-48fe-8345-de4eb0a39c86)
+ <li>new projection to get additional data</li>
+
+![Image](https://github.com/user-attachments/assets/9f7e528b-d122-4dbe-adcc-ec71dfe83911)
