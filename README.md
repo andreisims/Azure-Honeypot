@@ -187,3 +187,25 @@ In this lab, we will be setting up a basic SOC (security operations center) in t
  <li>new projection to get additional data</li>
 
 ![Image](https://github.com/user-attachments/assets/9f7e528b-d122-4dbe-adcc-ec71dfe83911)
+<h2>create visual map of attackers</h2>
+<li>go to Sentinel to creata a workbook</li>
+<li>threat management> workbooks</li>
+
+![Image](https://github.com/user-attachments/assets/fd07d0ce-00ca-4ce4-b58b-335e6a468ea6)
+<li>add workbook> edit> remove the prepopulated elements</li>
+
+![Image](https://github.com/user-attachments/assets/8aa3b6f0-9b42-4471-8ce9-875f6527bebf)
+<li>open the workbook doc (map.json) and copy the json data</li>
+clean up
+
+![Image](https://github.com/user-attachments/assets/e488cc2f-de51-4d54-b4eb-c28a6d99e0c3)
+<li>click Advanced Editor> delete the current data> paste the copied json from the map doc > click done editing> save the workbook (name it)</li>
+
+![Image](https://github.com/user-attachments/assets/c3a086ce-106b-4fd7-ae41-86852312fcd1)
+
+![Image](https://github.com/user-attachments/assets/9a5aef19-9e9e-4dc8-98a6-e1aa33a47678)
+<li>view the map settings> edit at top of the map> edit underneath the map> map settings >save and close</li>
+
+![Image](https://github.com/user-attachments/assets/0081ff24-ddcf-48e1-8d3f-34d1dcb44bdf)
+<h2>clean up</h2>
+<li>delete the resources when completed</li>
