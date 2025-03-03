@@ -92,3 +92,19 @@ In this lab, we will be setting up a basic SOC (security operations center) in t
 
  ![Image](https://github.com/user-attachments/assets/720cf840-7a0c-4591-b731-fe8f0153f54f)
  <li>once attackers see the vm on internet and attempt to hack into it, those failed attempts will show here</li>
+ <h2>forward the logs to Azure by creating a repository</h2>
+ <li>create log repository.</li>
+ <li>search for log analytics</li>
+
+ ![Image](https://github.com/user-attachments/assets/81d9c72f-6a67-48e7-8034-1e5c4fb81832)
+ <li>create new log analytics workspace</li>
+ <li>select the Resource Group and name it, review+create> create</li>
+
+ ![Image](https://github.com/user-attachments/assets/9524d9ab-53d4-45ff-abb1-db6068e87baf)
+ <h2>create Sentinel instance (SIEM)</h2>
+ <li>search for Sentinel and select create Microsoft Sentinel</li>
+
+ ![Image](https://github.com/user-attachments/assets/208937ec-e2f5-4898-8759-7e43dd9d54cc)
+ <li>select the log analytics workspace and select Add</li>
+
+ ![Image](https://github.com/user-attachments/assets/1079f45c-b55a-4d20-b270-e30f35fe1ab2)
