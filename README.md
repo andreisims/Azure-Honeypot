@@ -123,6 +123,61 @@ In this lab, we will be setting up a basic SOC (security operations center) in t
  <li>select the Windows Security Events via AMA> open connector page</li>
 
  ![Image](https://github.com/user-attachments/assets/d4ecda24-b2c6-4d69-8eb5-dc2d50cf402f)
- <li>select create a data collection rule> name it (this creates rules to forward logs from vm to the analytics workspace</li>
+ <li>select create a data collection rule> name it (this will forward logs from vm to the analytics workspace</li>
 
  ![Image](https://github.com/user-attachments/assets/cdea85b8-6882-47a0-bb75-40ccf3ccfa50)
+ <li>next> resources> expand and select the vm</li>
+
+ ![Image](https://github.com/user-attachments/assets/2dba458f-97a5-40d3-bae0-ffb88de451ea)
+ <li>next> collect> all security events> review+create> create</li>
+ <li>switch back to the vm tab and it will show the AzureMonitorWindows agent</li>
+
+ ![Image](https://github.com/user-attachments/assets/efa90838-9f74-46b3-bf38-989f032f896f)
+ <li>open Azure again in a 3rd tab and go to the analytics workspace</li>
+ <li>select logs and query 'security events'and click run. logs are in KQL; Kusto Query Language</li>
+
+ ![Image](https://github.com/user-attachments/assets/240ba9ce-6caa-4301-aa0b-ebc580f58d19)
+ <li>additional filtering using an attempted sign-ons name</li>
+
+ ![Image](https://github.com/user-attachments/assets/985fdb47-0b2f-4ab1-82e6-b4a9f23482e4)
+
+![Image](https://github.com/user-attachments/assets/d6e9b4d0-6f32-4dbd-99db-7741395a63af)
+
+![Image](https://github.com/user-attachments/assets/d967e3eb-1a0a-4682-86db-7ccaf889ff75)
+ <li>modify the colums for easier readability</li>
+
+ ![Image](https://github.com/user-attachments/assets/f008e750-6e61-44f2-98ef-b7b8b3bca721)
+ <li>geolookup shows hacker's location</li>
+
+![Image](https://github.com/user-attachments/assets/ec2581dc-f2e3-408c-81af-e0eeb4ed81cc)
+
+ <li>geo data will be updated from this <a href="https://docs.google.com/document/d/143seB9PwT9GSsStc14vPQWgnCHQeVMVEC6XBRz67p_Q/edit?tab=t.0">Checklist.</a> download to your pc</li></li>
+ <li>go back to Sentinel and select the instance. configuration> watchlist> create new</li>
+ <li>name and Alias should be the same</li>
+
+ ![Image](https://github.com/user-attachments/assets/a97ab40d-6591-40b6-acd1-05f34d2fd86d)
+ <li>upload the file for the Source</li>
+
+ ![Image](https://github.com/user-attachments/assets/4f5362b1-4ee1-4f6a-81a8-8e60529f7220)
+ <li>for the SearchKey, select network> review+create> create</li>
+
+ ![Image](https://github.com/user-attachments/assets/b1b466dd-ee0a-494a-9026-0d98aab9a7a6)
+ <li>wait for the watchlist to complete the uploads</li>
+
+ ![Image](https://github.com/user-attachments/assets/3092312f-a811-49ae-a53e-c2d674f32c1b)
+ <li>go back to log analytics to see the new list. search with the watchlist name</li>
+
+ ![Image](https://github.com/user-attachments/assets/fa163290-f08b-4906-a0bd-c840ad8bdd94)
+ <h1>next>advanced filter:</h1>
+ 
+```
+
+│   ├── let GeoIPDB_FULL = _Getwatchlist("geoip"):
+    ├── let WindowsEvents = SecurityEvent
+│   ├── | where IpAddress == <attacker IP address>
+    ├── | where EventID == 4625
+    ├── | order by TimeGenerated desc
+│   └── | evaluate ipv4_lookup(GeoIPDB_FULL, IpAddress, network);
+├── WindowsEvents
+    └── where EventID == "4625"
+```
