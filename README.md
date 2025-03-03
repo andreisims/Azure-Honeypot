@@ -108,3 +108,21 @@ In this lab, we will be setting up a basic SOC (security operations center) in t
  <li>select the log analytics workspace and select Add</li>
 
  ![Image](https://github.com/user-attachments/assets/1079f45c-b55a-4d20-b270-e30f35fe1ab2)
+ <h2>connect VM to the logs workspace</h2>
+ <li>in Sentinel> select content management> content hub> search for windows security> install</li>
+
+ ![Image](https://github.com/user-attachments/assets/65790680-ec86-4935-8894-5f2f6cc01d85)
+ <li>once installed, select Manage</li>
+
+ ![Image](https://github.com/user-attachments/assets/878122d5-6c7e-441b-9289-a4ddc15766d7)
+ <li>open Azure portal in another tab and select the VM</li>
+ <li>settings tab> extensions+applications></li>
+
+ ![Image](https://github.com/user-attachments/assets/ecaab469-c9ad-4021-96ad-4394d7dbc9f9)
+ <li>now back to the Windows Security Events tab</li>
+ <li>select the Windows Security Events via AMA> open connector page</li>
+
+ ![Image](https://github.com/user-attachments/assets/d4ecda24-b2c6-4d69-8eb5-dc2d50cf402f)
+ <li>select create a data collection rule> name it (this creates rules to forward logs from vm to the analytics workspace</li>
+
+ ![Image](https://github.com/user-attachments/assets/cdea85b8-6882-47a0-bb75-40ccf3ccfa50)
